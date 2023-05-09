@@ -1,0 +1,81 @@
+html{
+	height:100%;
+	
+}
+body {
+        background-image: url('mountain.jpg');
+        background-repeat: repeat;
+        background-size: cover;
+        position: relative;
+}
+header {
+
+	background-color: #000000;
+	color: #ffffff;
+	text-align: center;
+	padding: 50px;
+	
+	font-size: 30px;
+}
+#board {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.list {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+	margin: 10px;
+	padding: 10px;
+	min-width: 300px;
+	flex-grow: 1;
+	opacity: 0.8;
+}
+
+.list h2 {
+	font-size: 20px;
+	margin-top: 0;
+}
+
+
+footer {
+	background-color: #4d4d4d;
+	color: #ffffff;
+	text-align: center;
+	padding: 20px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+footer p {
+	margin: 0;
+}
+
+.list.drop
+{
+    background-color: #4d4d4d;
+    color: #ffffff;
+}
+.add-card {
+	background-color: #25d615;
+	border: none;
+	border-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+	margin-top: 8px;
+	padding: 6px 8px;
+	text-align: left;
+  }
+  
+  .card {
+	background-color: #fff;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 rgba(9,30,66,.25);
+	margin-bottom: 8px;
+	padding: 6px 8px;
+	position: relative;
+  }
+  
+  
