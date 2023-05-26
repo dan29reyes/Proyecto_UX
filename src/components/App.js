@@ -7,6 +7,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<LoginContainer/>} Redirect to="/InicioSesion"/>
         <Route path="/InicioSesion" element={<LoginContainer/>}/>
         <Route path="/Dashboard" element={<DashboardContainer/>}/>
       </Routes>

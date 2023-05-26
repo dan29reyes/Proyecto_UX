@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     margin-right: 15px;
+    margin-bottom: 15px;
     min-height: 40px;
     padding: 8px;
     position: relative;
@@ -13,7 +14,7 @@
   
   .column-name {
     color: #172b4d;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 20px;
     margin-bottom: 8px;
