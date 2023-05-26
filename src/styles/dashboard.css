@@ -1,29 +1,45 @@
+
 html{
 	height:100%;
 	
 }
-body {
-        background-image: url('mountain.jpg');
+body.dashboard {
+        background-image: url('../images/mountain.jpg');
         background-repeat: repeat;
         background-size: cover;
         position: relative;
 }
 header {
-
-	background-color: #000000;
-	color: #ffffff;
+	
+	color: #000000;
 	text-align: center;
 	padding: 50px;
-	
 	font-size: 30px;
+	width: auto;
+  height: auto;
+  overflow-x: auto;
+  background-color:rgb(255, 255, 255);
+  opacity: 0.8;
+  color: #000000;
+  animation-name: header;
+  animation-duration: 4s;
 }
+@keyframes header {
+	from {background-color: black;}
+	to {background-color:white;}
+	from{color:white;}
+	to{color: black;}
+
+
+  }
+  
 #board {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 
-.list {
+.list.dashboard {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
 	margin: 10px;
@@ -78,4 +94,5 @@ footer p {
 	position: relative;
   }
   
+
   
