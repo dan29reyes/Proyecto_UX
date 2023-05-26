@@ -1,31 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles/dashboard.css';
+import CardList from '../components/CardList';
 
-class Dashboard extends Component {
-  render(){
+const Dashboard = () => {
   return (
     <div>
       <header>
         <h1>trollo</h1>
       </header>
       <div className="body.dashboard">
-      <div id="board">
-        <div className="list.dashboard" id="Pendiente">
-          <h2>Pendiente</h2>
+        <div id="board">
+          <CardList></CardList>
         </div>
-        <div className="list.dashboard" id="En progreso">
-          <h2>En progreso</h2>
-        </div>
-        <div className="list.dashboard" id="Completado">
-          <h2>Completado</h2>
-        </div>
-      </div></div>
+      </div>
 
       <footer>
         <p>&copy; Kenneth Reyes/Franklin Rodriguez</p>
       </footer>
     </div>
-  )};
+  );
 };
 
 export default Dashboard;

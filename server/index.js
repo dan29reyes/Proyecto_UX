@@ -5,9 +5,10 @@ app.use(bodyParser.json());
 const cors = require('cors')
 app.use(cors());
 
-// const cardRouter = require("./routes/card.routes");
+const cardRouter = require("./routes/cards.routes");
 const userRouter = require("./routes/users.routes");
-// app.use("/cards", cardRouter);
+
+app.use("/cards", cardRouter);
 app.use("/user", userRouter);
 
 app.listen(8000);
