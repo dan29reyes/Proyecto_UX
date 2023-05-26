@@ -1,61 +1,64 @@
-
-html{
-	height:100%;
-	
-}
-body.dashboard {
-        background-image: url('../images/mountain.jpg');
-        background-repeat: repeat;
-        background-size: cover;
-        position: relative;
-}
-header {
-	
-	color: #000000;
-	text-align: center;
-	padding: 50px;
-	font-size: 30px;
-	width: auto;
-  height: auto;
-  overflow-x: auto;
-  background-color:rgb(255, 255, 255);
-  opacity: 0.8;
-  color: #000000;
-  animation-name: header;
-  animation-duration: 4s;
-}
-@keyframes header {
-	from {background-color: black;}
-	to {background-color:white;}
-	from{color:white;}
-	to{color: black;}
-
-
+html {
+	height: 100%;
   }
   
-#board {
+  .page-container {
+	background-image: url('../images/wallpaper.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+  }
+  
+  header {
+	color: #000000;
+	text-align: center;
+	padding: 5px;
+	font-size: 30px;
+	width: auto;
+	height: auto;
+	overflow-x: auto;
+	background-color: hsla(209, 22.6%, 33.4%, 0.9);
+	opacity: 0.8;
+	color: #ffffff;
+	animation-name: header;
+	animation-duration: 4s;
+	margin-bottom: 25px;
+  }
+  
+  @keyframes header {
+	from {
+		background-color: white;
+		color: black;
+	}
+	to {
+	  background-color: hsla(209, 22.6%, 33.4%, 0.9);
+	  color: white;
+	}
+  }  
+  
+  #board {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-}
-
-.list.dashboard {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
+  }
+  
+  .list.dashboard {
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 5px;
 	margin: 10px;
 	padding: 10px;
 	min-width: 300px;
 	flex-grow: 1;
 	opacity: 0.8;
-}
-
-.list h2 {
+  }
+  
+  .list h2 {
 	font-size: 20px;
 	margin-top: 0;
-}
-
-
-footer {
+  }
+  
+  footer {
 	background-color: #4d4d4d;
 	color: #ffffff;
 	text-align: center;
@@ -63,18 +66,18 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-}
-
-footer p {
+  }
+  
+  footer p {
 	margin: 0;
-}
-
-.list.drop
-{
-    background-color: #4d4d4d;
-    color: #ffffff;
-}
-.add-card {
+  }
+  
+  .list.drop {
+	background-color: #4d4d4d;
+	color: #ffffff;
+  }
+  
+  .add-card {
 	background-color: #25d615;
 	border: none;
 	border-radius: 3px;
@@ -88,11 +91,9 @@ footer p {
   .card {
 	background-color: #fff;
 	border-radius: 3px;
-	box-shadow: 0 1px 0 rgba(9,30,66,.25);
+	box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
 	margin-bottom: 8px;
 	padding: 6px 8px;
 	position: relative;
   }
-  
-
   

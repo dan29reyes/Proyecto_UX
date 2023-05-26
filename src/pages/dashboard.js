@@ -1,14 +1,14 @@
 import React from 'react';
 import '../styles/dashboard.css';
-import CardList from '../components/CardList';
+import CardList from '../components/List';
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className='page-container'>
       <header>
-        <h1>trollo</h1>
+        <h1>TROLLO</h1>
       </header>
-      <div className="body.dashboard">
+      <div>
         <div id="board">
           <CardList></CardList>
         </div>
