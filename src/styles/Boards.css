@@ -51,7 +51,7 @@ html {
 
 .board-button {
 	display: block;
-	width: 270px;
+	width: 250px;
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
@@ -59,11 +59,26 @@ html {
 	padding: 0;
   }
   
-  .board-button:hover {
-	background-color: rgba(38, 141, 209, 0.2);
+  .board:hover {
+	background-color: #0077c7;
 	border-radius: 10px;
   }
+
+  .newBoard {
+	width: 250px;
+	background-color: #a1c0d5;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
   
+  .newBoard:hover {
+	background-color: #55a0d1;
+	border-radius: 10px;
+  }
+
   .column-name {
 	margin-top: 10px;
 	font-size: 18px;
