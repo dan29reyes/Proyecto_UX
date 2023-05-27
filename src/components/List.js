@@ -5,16 +5,31 @@ import axios from 'axios';
 import '../styles/List.css'; // Import the external style.css file
 
 const CardList = () => {
+  const [lists, setLists] = useState([]);
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
     getCards();
   }, []);
 
+  const getLists = () => {
+    const options = {
+      method: 'POST',
+      url: 'http://localhost:8000/lists/viewList',
+      data: { id_board: localStorage.getItem("id_board")}
+    };
+    axios.request(options).then(function (response) {
+      setLists(response.data);
+    }).catch(function (error) {
+      console.error(error);
+    });
+  }
+
   const getCards = () => {
     const options = {
       method: 'POST',
       url: 'http://localhost:8000/cards/view',
+      data: { id_board: localStorage.getItem("id_board")}
     };
 
     axios.request(options).then(function (response) {

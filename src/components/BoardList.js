@@ -45,6 +45,14 @@ const BoardList = () => {
     return date.toLocaleDateString();
   }
 
+  const cerrarSesion = () => {
+    localStorage.clear();
+  }
+
+  const handleBoardClick = (id_board) => {
+    localStorage.setItem("id_board", id_board);
+  }
+
   // const addNewBoard = () => {
   //   const options = {
   //     method: 'POST',
@@ -68,7 +76,7 @@ const BoardList = () => {
         {boards.length > 0 ? (
           boards.map((board) => (
             <div key={board.id_board}>
-              <Link className="board-button" to="/Proyecto">
+              <Link className="board-button" to="/Proyecto" onClick={()=>handleBoardClick(board.id_board)}>
                 <button className="board-button">
                   <Board
                     name_board={board.name_board}
@@ -86,7 +94,7 @@ const BoardList = () => {
       </div>
         <button className="board-button" onClick={abrirModal}>
           <Board
-            name_board={"Nuevo Tablero"}
+            name_board={"Crear Tablero"}
             style={"newBoard"}
           />
           <Modal isOpen={modal} style={modalStyles}>
@@ -109,6 +117,13 @@ const BoardList = () => {
             </ModalFooter>
           </Modal>
         </button>
+        <div>
+          <Link to="/inicioSesion">
+            <button variant="warning" className="board-cerrar-sesion" onClick={cerrarSesion}>
+              Cerrar Sesion
+            </button>
+          </Link>
+        </div>
     </div>
   );
 };

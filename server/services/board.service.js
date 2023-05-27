@@ -21,12 +21,11 @@ const knex = require("knex")({
 
   async function createBoards(boards){
     try{
-        const insertedRows = await knex('boards').insert({
+        await knex('boards').insert({
             name_board: boards.name_board,
             id_user: boards.user_id,
             description_board: boards.description_board,
         })
-        console.log('Board insertado: ',insertedRows);
     }catch(error){
         console.error("Error insertando el board: ",error);
     }
@@ -34,21 +33,28 @@ const knex = require("knex")({
 
   async function deleteBoards(boardId){
     try{
-        const deletedRows = await('boards').where({id_board: boardId}).del();
-        console.log('Board eliminado',deletedRows);
+        const listId = await knex.select('id_list').from('lists').where({id_board: boardId});
+        console.log(listId)
+        for(let i = 0; i < listId.length; i++){
+            const id_cards = await knex.select('id_card').from('cards').where({id_list: listId[i].id_list});
+            for(let i = 0; i < id_cards.length; i++){
+                await knex('cards').where({id_card: id_cards[i].id_card}).del();
+            }
+            await knex('lists').where({id_list: listId[i].id_list}).del();
+        }
+        await knex('boards').where({id_board: boardId}).del();
     }catch(error){
         console.error('Error borrando el board');
     }
   }
 
-  async function updateBoards(boardId, boards){
+  async function updateBoards(boards){
     try{
-        const boardUpdated = await knex('boards').where({
-                id_board:boardId}).update({
-                name_board: boards.name_board,
-                description_board: boards.description_board,
-            });
-            console.log('Board updated: ',boardUpdated);
+        await knex('boards').where({
+            id_board:boards.id_board}).update({
+            name_board: boards.name_board,
+            description_board: boards.description_board,
+        });
     }catch(error){
         console.error('Error updating board: ',error);
     }
