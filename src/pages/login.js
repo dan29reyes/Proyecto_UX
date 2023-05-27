@@ -20,9 +20,9 @@ const LoginPage = () => {
     } else {
       try {
         const response = await services.postLogin(form.email, form.password);
-        console.log("Login successful");
         localStorage.setItem("accesstoken", response.data.accesstoken);
         localStorage.setItem("refreshToken", response.data.refreshToken);
+        localStorage.setItem("id_user", response.data.id_user);
         navigate("/Tablero");
       } catch (error) {
         if (error.response && error.response.status === 401) {

@@ -5,11 +5,11 @@ function postLogin(email, password) {
     method: 'POST',
     url: 'http://localhost:8000/user/login',
     data: { email: email, password: password }
-  };
+  };;
 
   return axios.request(options)
     .then(function (response) {
-      console.log(response.data);
+      console.log(response.data)
       return response.data;
     })
     .catch(function (error) {

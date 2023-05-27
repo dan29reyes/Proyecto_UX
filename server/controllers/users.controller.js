@@ -55,11 +55,11 @@ async function login(req, res) {
         .pbkdf2Sync(password, credentials.salt_user, 30000, 64, "sha256")
         .toString("base64");
       if (encryptedPassword == credentials.password_user) {
-        const accessToken = jwt.sign({ email }, process.env.TOKEN_KEY || "1AS9812OQPY2",{
+        const accessToken = jwt.sign({ email }, process.env.TOKEN_KEY || "AS4D5FF6G78NHCV7X6X5C",{
           expiresIn: "1d",
         });
         //refrescar sesion a medida el usuario use la aplicacion
-        const refreshToken = jwt.sign({ email }, process.env.TOKEN_KEY || "1AS9812OQPY2",{
+        const refreshToken = jwt.sign({ email }, process.env.TOKEN_KEY || "AS4D5FF6G78NHCV7X6X5C",{
           expiresIn: "1m",
         });
         res.send({
@@ -67,6 +67,7 @@ async function login(req, res) {
           data: {
             accessToken,
             refreshToken,
+            id_user: credentials.id_user,
           }
         });
       } else {

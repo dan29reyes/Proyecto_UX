@@ -17,7 +17,7 @@ const knex = require("knex")({
   }
 
   const getCredentials = async (email) => {
-    let credentials = await knex.select("password_user","salt_user").from("users").where("email_user",email);
+    let credentials = await knex.select("*").from("users").where("email_user",email);
     credentials = JSON.stringify(credentials);
     return JSON.parse(credentials);
   }

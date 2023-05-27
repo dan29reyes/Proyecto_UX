@@ -29,11 +29,10 @@ const BoardList = () => {
     const options = {
       method: 'POST',
       url: 'http://localhost:8000/boards/viewBoard',
-      data: { id_user: 8}
+      data: { id_user: localStorage.getItem("id_user")}
     };
     return axios.request(options)
       .then(function (response) {
-        console.log(response)
         setBoards(response.data);
       })
       .catch(function (error) {
@@ -46,17 +45,21 @@ const BoardList = () => {
     return date.toLocaleDateString();
   }
 
-  const addNewBoard = () => {
-    const newBoard = {
-      name_board: "New Board",
-      description_board: "This is a new board",
-      update_date: new Date().toISOString()
-    };
-
-    const updatedBoards = [...boards];
-    updatedBoards.push(newBoard);
-    setBoards(updatedBoards);
-  }
+  // const addNewBoard = () => {
+  //   const options = {
+  //     method: 'POST',
+  //     url: 'http://localhost:8000/boards/createBoard',
+  //     data: { id_user: 8}
+  //   };
+  //   return axios.request(options)
+  //     .then(function (response) {
+  //       console.log(response)
+  //       setBoards(response.data);
+  //     })
+  //     .catch(function (error) {
+  //       throw error;
+  //   });
+  // }
 
   return (
     <div className="container">
