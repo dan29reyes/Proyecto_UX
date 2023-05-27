@@ -32,7 +32,6 @@ function postRegister(email, password) {
   });
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  postLogin, postRegister
+  postLogin, postRegister,
 };

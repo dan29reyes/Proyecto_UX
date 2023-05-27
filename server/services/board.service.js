@@ -13,12 +13,9 @@ const knex = require("knex")({
     try{
         let boards = await knex.select("*").from("boards").where({id_user: userId});
         boards = JSON.stringify(boards);
-        console.log('Boards obtenidos: ',boards)
         return JSON.parse(boards);
     }catch(error){
         console.error("Error obteniendo los boards: ",error);
-    }finally{
-        knex.destroy();
     }
   }
 
@@ -32,8 +29,6 @@ const knex = require("knex")({
         console.log('Board insertado: ',insertedRows);
     }catch(error){
         console.error("Error insertando el board: ",error);
-    }finally{
-        knex.destroy();
     }
   }
 
@@ -43,8 +38,6 @@ const knex = require("knex")({
         console.log('Board eliminado',deletedRows);
     }catch(error){
         console.error('Error borrando el board');
-    }finally{
-        knex.destroy();
     }
   }
 
@@ -58,8 +51,6 @@ const knex = require("knex")({
             console.log('Board updated: ',boardUpdated);
     }catch(error){
         console.error('Error updating board: ',error);
-    }finally{
-        knex.destroy();
     }
 }
 

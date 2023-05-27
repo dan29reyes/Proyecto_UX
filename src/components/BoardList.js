@@ -12,28 +12,40 @@ const BoardList = () => {
     getBoards();
   }, []);
 
-  const getBoards = async () => {
-    try {
-      const response = await axios.post('http://localhost:8000/boards/viewBoard', { id_user: 8 });
-      console.log(response.data);
-      setBoards(response.data);
-    } catch (error) {
-      console.error("Error fetching boards:", error);
-    }
-  };
+  const getBoards = () => {
+    const options = {
+      method: 'POST',
+      url: 'http://localhost:8000/boards/viewBoard',
+      data: { id_user: 8}
+    };
+    return axios.request(options)
+      .then(function (response) {
+        console.log(response)
+        setBoards(response.data);
+      })
+      .catch(function (error) {
+        throw error;
+    });
+  }
+
+  const formatUpdateDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(); // Format the date as per the user's local time zone
+  }
 
   return (
     <div className="container">
+      <h1>Tableros</h1>
       <div className="row">
         {boards.length > 0 ? (
           boards.map((board) => (
             <div key={board.id_board}>
-              <Link to="/Proyecto">
+              <Link className="board-button" to="/Proyecto">
                 <button className="board-button">
                   <Board
                     name_board={board.name_board}
                     description_board={board.description_board}
-                    update_date={board.update_date}
+                    update_date={formatUpdateDate(board.update_date)}
                   />
                 </button>
               </Link>

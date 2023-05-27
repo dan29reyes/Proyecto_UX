@@ -13,7 +13,6 @@ const Project = () => {
           <CardList></CardList>
         </div>
       </div>
-
       <footer>
         <p>&copy; Kenneth Reyes/Franklin Rodriguez</p>
       </footer>

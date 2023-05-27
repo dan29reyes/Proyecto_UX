@@ -27,8 +27,6 @@ const knex = require("knex")({
         console.log('Card insertado: ',insertedRows);
     }catch(error){
         console.error("Error insertando el card: ",error);
-    }finally{
-        knex.destroy();
     }
   }
   
@@ -38,8 +36,6 @@ const knex = require("knex")({
         console.log('Card eliminado',deletedRows);
     }catch(error){
         console.error('Error borrando el card');
-    }finally{
-        knex.destroy();
     }
   }
   
@@ -54,8 +50,6 @@ const knex = require("knex")({
         console.log('Card updated: ',boardUpdated);
     }catch(error){
         console.error('Error updating board: ',error);
-    }finally{
-        knex.destroy();
     }
   }
   
