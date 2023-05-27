@@ -7,11 +7,15 @@ function postLogin(email, password) {
     data: { email: email, password: password }
   };
 
-  axios.request(options).then(function (response) {
-    console.log(response.data);
-  }).catch(function (error) {
-    console.error(error);
-  });
+  return axios.request(options)
+    .then(function (response) {
+      console.log(response.data);
+      return response.data;
+    })
+    .catch(function (error) {
+      console.error(error);
+      throw error;
+    });
 }
 
 function postRegister(email, password) {

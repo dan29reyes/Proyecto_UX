@@ -54,8 +54,6 @@ async function login(req, res) {
       const encryptedPassword = crypto
         .pbkdf2Sync(password, credentials.salt_user, 30000, 64, "sha256")
         .toString("base64");
-        console.log(encryptedPassword);
-        console.log(credentials.password_user)
       if (encryptedPassword == credentials.password_user) {
         const accessToken = jwt.sign({ email }, process.env.TOKEN_KEY || "1AS9812OQPY2",{
           expiresIn: "1d",

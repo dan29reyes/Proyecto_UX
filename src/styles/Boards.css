@@ -1,0 +1,101 @@
+html {
+	height: 100%;
+  }
+  
+  .tablero-container {
+	background-image: url('../images/background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+  }
+  
+  header {
+	color: #000000;
+	text-align: center;
+	padding: 5px;
+	font-size: 30px;
+	width: auto;
+	height: auto;
+	overflow-x: auto;
+	background-color: hsla(209, 22.6%, 33.4%);
+	opacity: 0.8;
+	color: #ffffff;
+	animation-name: header;
+	animation-duration: 4s;
+	margin-bottom: 25px;
+  }
+  
+  @keyframes header {
+	from {
+		background-color: white;
+		color: black;
+	}
+	to {
+	  background-color: hsla(209, 22.6%, 33.4%, 0.9);
+	  color: white;
+	}
+  } 
+  
+  .board {
+	width: 300px;
+	background-color: #f0f0f0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+.board-button {
+	display: block;
+	width: auto;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	text-align: left;
+	padding: 0;
+  }
+  
+  .board-button:hover {
+	background-color: #f5f5f5;
+  }
+  
+  .column-name {
+	margin-top: 10px;
+	font-size: 18px;
+	font-weight: bold;
+  }
+  
+  .column-cards {
+	margin-top: 5px;
+	font-size: 14px;
+	color: #555;
+  }
+  
+
+  .board-title {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+  }
+  
+  .board-description {
+	font-size: 14px;
+	color: #666;
+  }
+  
+  .board-update-date {
+	font-size: 12px;
+	color: #999;
+  }  
+
+  footer {
+	background-color: hsla(209, 22.6%, 33.4%);
+	color: #ffffff;
+	text-align: center;
+	padding: 20px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+  }

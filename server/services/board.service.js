@@ -13,6 +13,7 @@ const knex = require("knex")({
     try{
         let boards = await knex.select("*").from("boards").where({id_user: userId});
         boards = JSON.stringify(boards);
+        console.log('Boards obtenidos: ',boards)
         return JSON.parse(boards);
     }catch(error){
         console.error("Error obteniendo los boards: ",error);

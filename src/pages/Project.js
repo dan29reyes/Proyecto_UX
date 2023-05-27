@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/dashboard.css';
+import '../styles/Project.css';
 import CardList from '../components/List';
 
-const Dashboard = () => {
+const Project = () => {
   return (
     <div className='page-container'>
       <header>
@@ -21,4 +21,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Project;

@@ -16,14 +16,25 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!validator.isEmail(form.email)) {
-      console.log("email bad")
+      console.log("email bad");
     } else {
-      console.log("email good");
-      services.postLogin(form.email, form.password);
-      navigate("/Dashboard");
+      try {
+        const response = await services.postLogin(form.email, form.password);
+        console.log("Login successful");
+        localStorage.setItem("accesstoken", response.data.accesstoken);
+        localStorage.setItem("refreshToken", response.data.refreshToken);
+        navigate("/Tablero");
+      } catch (error) {
+        if (error.response && error.response.status === 401) {
+          console.log("Invalid credentials");
+        } else {
+          console.log("An error occurred:", error);
+        }
+      }
     }
-  }
-
+  };
+  
+  
   const handleRegister = async (e) => {
     e.preventDefault();
     if (!validator.isEmail(form.email)) {
@@ -81,6 +92,9 @@ const LoginPage = () => {
       <div className="signup">
         Don't have an account? <a href="#">Sign Up</a>
       </div>
+      <footer>
+        <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
+      </footer>
     </div>
   );
 }
