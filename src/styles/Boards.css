@@ -38,25 +38,28 @@ html {
   } 
   
   .board {
-	width: 250px;
+	width: 230px;
 	background-image: url('../images/circles.png');
 	background-size: 340px 95px;
 	background-color: #268dd1;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	padding: 10px;
-	margin: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
 .board-button {
 	display: block;
-	width: 250px;
+	width: 230px;
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
 	text-align: left;
 	padding: 0;
+	margin-bottom: 10px;
+	margin-right: 10px;
   }
   
   .board:hover {
@@ -137,3 +140,11 @@ html {
 	background-color: #0077c7;
 	border-radius: 10px;
   }
+
+  .column-container {
+	display: flex;
+	flex-wrap: wrap;
+  }
+  
+  
+  

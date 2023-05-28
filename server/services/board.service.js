@@ -23,7 +23,7 @@ const knex = require("knex")({
     try{
         await knex('boards').insert({
             name_board: boards.name_board,
-            id_user: boards.user_id,
+            id_user: boards.id_user,
             description_board: boards.description_board,
         })
     }catch(error){

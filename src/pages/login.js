@@ -34,7 +34,6 @@ const LoginPage = () => {
     }
   };
   
-  
   const handleRegister = async (e) => {
     e.preventDefault();
     if (!validator.isEmail(form.email)) {

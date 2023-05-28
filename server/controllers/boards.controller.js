@@ -14,11 +14,11 @@ const getBoards = async (req, res) => {
 };
 
 const createBoard = async (req, res) => {
-  const { name_board, user_id, description_board } = req.body;
+  const { name_board, id_user, description_board } = req.body;
   try {
-    if (typeof name_board === "string" && typeof description_board === "string") {
-      const boardId = await boardService.createBoard(req.body);
-      const boards = await boardService.getBoards(user_id); // Fetch the updated list of boards
+    if (typeof name_board === "string" && typeof description_board === "string" && typeof id_user === "number") {
+      const boardId = await boardService.createBoards(req.body);
+      const boards = await boardService.getBoards(id_user);
       res.send({ boardId, boards });
     } else {
       res.status(400).send({
