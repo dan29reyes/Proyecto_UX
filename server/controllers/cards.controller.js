@@ -3,7 +3,7 @@ const cardService = require("../services/card.service");
 const getCards = async (req, res) => {
   const { id_list } = req.body;
   try {
-    const cards = await cardService.getCards(req.body.id_list);
+    const cards = await cardService.getCards(id_list);
     res.send(cards);
   } catch (e) {
     console.log(e);

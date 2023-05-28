@@ -96,7 +96,7 @@ const BoardList = () => {
       <div className="row">
         {boards.length > 0 ? (
           <div className="column-container">
-            {boards.map((board, index) => (
+            {boards.map((board) => (
               <Link
                 key={board.id_board}
                 className="board-button"
@@ -119,7 +119,12 @@ const BoardList = () => {
             </button>
           </div>
         ) : (
-          <div>No boards found.</div>
+          <button className="board-button" onClick={abrirModal}>
+            <Board
+              name_board={"Crear Tablero"}
+              style={"newBoard"}
+            />
+          </button>
         )}
       </div>
       <div>
