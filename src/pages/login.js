@@ -5,6 +5,9 @@ import axios from 'axios';
 import services from '../utils/services';
 import validator from '../utils/validator';
 import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -59,11 +62,20 @@ const LoginPage = () => {
     }));
   }
 
+
   return (
+    
+    <div className="loginbackground">
     <div className="login-container">
-      <div className="logo-container">
+    <div className="user-field">
+    <div className="key-field">
+          <div className="logo-container">
         <img src={logImg} width={100} alt="Login" />
+        
+
+        
       </div>
+      
       <form onSubmit={handleLogin}>
         <label htmlFor="email">Email:</label>
         <input
@@ -73,6 +85,7 @@ const LoginPage = () => {
           className="input-field"
           onChange={handleChange}
         />
+        
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -88,14 +101,30 @@ const LoginPage = () => {
           <a href="#">Forgot Password?</a>
         </div>
       </form>
+      
       <div className="signup">
         Don't have an account? <a href="#">Sign Up</a>
       </div>
-      <footer>
+      
+     
+    </div>
+    
+    </div>
+    </div>
+    <footer>
         <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
       </footer>
     </div>
+    
   );
 }
 
+
 export default LoginPage;
+
+
+
+
+
+
+
