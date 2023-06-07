@@ -7,8 +7,6 @@ import validator from '../utils/validator';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const LoginPage = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -62,56 +60,45 @@ const LoginPage = () => {
     }));
   }
 
-
   return (
-    
     <div className="loginbackground">
-    <div className="login-container">
-    <div className="user-field">
-    <div className="key-field">
-          <div className="logo-container">
-        <img src={logImg} width={100} alt="Login" />
-        
-
-        
-      </div>
-      
-      <form onSubmit={handleLogin}>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          className="input-field"
-          onChange={handleChange}
-        />
-        
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          className="input-field"
-          onChange={handleChange}
-        />
-        <button type="submit" className="login-button">
-          Log In
-        </button>
-        <div className="forgot-password">
-          <a href="#">Forgot Password?</a>
+      <div className="login-container">
+        <div className="user-field">
+          <div className="key-field">
+            <div className="logo-container">
+              <img src={logImg} width={100} alt="Login" />
+            </div>
+            <form onSubmit={handleLogin}>
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="input-field"
+                onChange={handleChange}
+              />
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="input-field"
+                onChange={handleChange}
+              />
+              <button type="submit" className="login-button">
+                Log In
+              </button>
+              <div className="forgot-password">
+                <a href="#">Forgot Password?</a>
+              </div>
+            </form>
+            <div className="signup">
+              Don't have an account? <a href="#">Sign Up</a>
+            </div>
+          </div>
         </div>
-      </form>
-      
-      <div className="signup">
-        Don't have an account? <a href="#">Sign Up</a>
       </div>
-      
-     
-    </div>
-    
-    </div>
-    </div>
-    <footer>
+      <footer>
         <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
       </footer>
     </div>
@@ -119,12 +106,4 @@ const LoginPage = () => {
   );
 }
 
-
 export default LoginPage;
-
-
-
-
-
-
-
