@@ -93,7 +93,7 @@ const LoginPage = () => {
               </div>
             </form>
             <div className="signup">
-              Don't have an account? <a href="#">Sign Up</a>
+              Don't have an account? <a href="/Registro">Sign Up</a>
             </div>
           </div>
         </div>
