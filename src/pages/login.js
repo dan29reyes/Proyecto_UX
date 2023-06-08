@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/login.css';
 import logImg from "../images/login_user.png";
+import userIcon from "../images/usericon.png";
+import passIcon from "../images/keyicon.png";
 import axios from 'axios';
 import services from '../utils/services';
 import validator from '../utils/validator';
@@ -63,28 +65,36 @@ const LoginPage = () => {
   return (
     <div className="loginbackground">
       <div className="login-container">
-        <div className="user-field">
-          <div className="key-field">
             <div className="logo-container">
-              <img src={logImg} width={100} alt="Login" />
+              <img src={logImg} width={100} alt="Login" style={{marginRight:'105px'}} />
             </div>
             <form onSubmit={handleLogin}>
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="input-field"
-                onChange={handleChange}
-              />
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                className="input-field"
-                onChange={handleChange}
-              />
+              <label htmlFor="email" style={{ marginRight: '10px' }}> 
+                <img src={userIcon} width={20} style={{ marginRight: '5px' }}/>
+                Email:
+              </label>
+              <div>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="input-field"
+                  onChange={handleChange}
+                />
+              </div>
+              <label htmlFor="password" style={{ marginRight: '10px' }}>
+                <img src={passIcon} width={20} style={{ marginRight: '5px' }}/>
+                Password:
+              </label>
+              <div>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  className="input-field"
+                  onChange={handleChange}
+                />
+              </div>
               <button type="submit" className="login-button">
                 Log In
               </button>
@@ -95,8 +105,6 @@ const LoginPage = () => {
             <div className="signup">
               Don't have an account? <a href="/Registro">Sign Up</a>
             </div>
-          </div>
-        </div>
       </div>
       <footer>
         <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>

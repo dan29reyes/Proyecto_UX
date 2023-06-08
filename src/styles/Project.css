@@ -2,8 +2,18 @@ html {
 	height: 100%;
   }
   
-  .page-container {
+  .page-container-boards {
 	background-image: url('../images/wallpaper.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+
+  }
+
+  .Board-set{
+	display: flex;
+	margin-left: -150px;
   }
   
   header {

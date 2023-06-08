@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "../styles/Register.css";
-import axios from 'axios';
 import services from '../utils/services';
 import validator from '../utils/validator';
 import { useNavigate } from 'react-router-dom';
@@ -10,24 +9,22 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     email: '',
-    password: ''
+    password: '',
+    rePassword: ''
   });
+  const [passwordMismatch, setPasswordMismatch] = useState(false);
+  const [userExists, setUserExists] = useState(false);
 
   const handleRegister = async (e) => {
     e.preventDefault();
     if (!validator.isEmail(form.email)) {
-      console.log("email bad")
+      console.log("email bad");
+    } else if (form.password !== form.rePassword) {
+      setPasswordMismatch(true);
     } else {
       console.log("email good");
-      services.postRegister(form.email, form.password);
+      const response = await services.postRegister(form.email, form.password);
     }
-    axios.post('http://localhost:8000/user/register', form)
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch(({ response }) => {
-        console.log(response);
-      });
   }
 
   const handleChange = (e) => {
@@ -36,27 +33,51 @@ const RegisterPage = () => {
       ...prevState,
       [name]: value
     }));
+    console.log(form);
+    setPasswordMismatch(false);
+    setUserExists(false);
   }
 
   return (
-    <div className='main'>
+    <div className='main-signup'>
       <section className='signup'>
         <div className='container-sign'>
           <div className='signup-content'>
             <form id="signup-form" className='signup-form'>
               <h2 className='form-title'>Crear Cuenta</h2>
-              <div className="form-group">
-                <input type="email" className='form-input' name="email" id="email" placeholder="Correo electrónico" />
+              <div className="form-group-register">
+                <input
+                  type="email"
+                  className='form-input-register'
+                  name="email"
+                  id="email"
+                  placeholder="Correo electrónico"
+                  onChange={handleChange}
+                />
               </div>
-              <div className="form-group">
-                <input type="password" className='form-input' name="password" id="password" placeholder="Contraseña" />
+              <div className="form-group-register">
+                <input
+                  type="password"
+                  className='form-input-register'
+                  name="password"
+                  id="password"
+                  placeholder="Contraseña"
+                  onChange={handleChange}
+                />
               </div>
               <div>
-                <input type="password" className='form-input' name="re_password" id="re_password" placeholder="Confirmar Contraseña" />
+                <input
+                  type="password"
+                  className='form-input-register'
+                  name="rePassword"
+                  id="re_password"
+                  placeholder="Confirmar Contraseña"
+                  onChange={handleChange}
+                />
+                {passwordMismatch && <div className="password-mismatch">Las contraseñas no coinciden</div>}
+                {userExists && <div className="user-exists">El usuario ya existe</div>}
               </div>
-              <div className="form-group">
-                <input type="submit" name="submit" id="submit" className="form-submit" value="Crear Cuenta" onClick={handleRegister} />
-              </div>
+              <input type="submit" name="submit" id="submit" className="form-submit-register" value="Crear Cuenta" onClick={handleRegister} />
             </form>
             <p className='loginhere'>
               ¿Ya tienes una cuenta? <a href="/InicioSesion" className='loginhere-link'>Inicia Sesión</a>

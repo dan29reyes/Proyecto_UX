@@ -1,4 +1,3 @@
-/* style.css */
 
 html {
 	height: 100%;
@@ -25,7 +24,7 @@ html {
 
 .logo-container {
   margin-bottom: 2rem;
-  margin-left: 52px;
+  margin-left: 103px;
 }
 
 form {
@@ -49,30 +48,11 @@ label {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 200px;
-
-}
-
-.user-field{
-  
-    background-image: url('../images/usericon.png');
-    background-repeat: no-repeat;
-    background-size: 20px;
-    background-position:50px 175px;
-    padding-left: 40px;
-    
-    
-}
-.key-field{
-  background-image: url('../images/keyicon.png');
-  background-repeat: no-repeat;
-  background-size: 20px;
-  background-position: 10px 270px;
-  padding-left: 40px;
 }
 
 .login-button {
   padding: 0.60rem 1rem;
-  background-color: #007bff; /* Blue color */
+  background-color: #007bff; 
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -88,16 +68,17 @@ label {
 .forgot-password {
   margin-top: 1rem;
   font-size: 0.8rem;
-  color: #007bff; /* Blue color */
+  color: #007bff; 
 }
 
 .signup {
   margin-top: 1rem;
   font-size: 0.9rem;
+  margin-left: 100px;
 }
 
 a {
-  color: #007bff; /* Blue color */
+  color: #007bff;
   text-decoration: none;
 }
 

@@ -7,7 +7,6 @@ import axios from 'axios';
 import '../styles/Boards.css';
 
 const BoardList = () => {
-  //Form para agregar un board
   const [form, setForm] = useState({
     name_board: '',
     description_board: ''

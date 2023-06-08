@@ -4,12 +4,12 @@
     padding: 50px 100px;
 }
 
-.form-group {
+.form-group-register {
     overflow: hidden;
     margin-bottom: 20px
 }
 
-.form-input {
+.form-input-register {
     width: 250px;
     border: 1px solid #ebebeb;
     border-radius: 5px;
@@ -24,7 +24,7 @@
     color: #222
 }
 
-.form-submit {
+.form-submit-register {
     margin-top: 20px;
     width: 210px;
     height: 54px;
@@ -68,7 +68,7 @@
     color: #555
 }
 
-.main {
+.main-signup{
     display: flex;
     justify-content: flex-end;
     align-items: center;

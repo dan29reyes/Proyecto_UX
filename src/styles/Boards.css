@@ -68,12 +68,11 @@ html {
   }
 
   .newBoard {
-	width: 250px;
+	width: 230px;
 	background-color: #a1c0d5;
 	border: 1px solid #ccc;
 	border-radius: 10px;
 	padding: 10px;
-	margin: 10px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   

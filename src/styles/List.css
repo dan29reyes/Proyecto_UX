@@ -6,10 +6,10 @@
     flex-direction: column;
     margin-right: 15px;
     margin-bottom: 15px;
-    min-height: 40px;
     padding: 8px;
     position: relative;
     width: 305px;
+    height: fit-content;
   }
   
   .column-name {
@@ -21,6 +21,7 @@
     margin-top: 12px;
     margin-bottom: 16px;
     text-align: left;
+    display:flex;
     border-left: 30px;
   }
   
@@ -56,5 +57,89 @@
     position: relative;
     text-decoration: none;
     z-index: 0;
+    width: 100%;
+    min-height: 35px;
+    height: 100%;
   }
   
+  .column-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .add-list-button {
+    background-color: rgb(240,240,240,0);
+    border: none;
+    border-radius: 3px;
+    height: auto;
+    text-align: left;
+    min-height: 32px;
+    padding: 4px;
+    width: 100%;
+    transition: background 85ms ease-in,opacity 40ms ease-in,border-color 85ms ease-in;
+  }
+
+  .options-button{
+    display: flex;
+    position: relative;
+    left: 170px;
+    bottom: 12px;
+    border: none;
+    text-align: center;
+    background-color: rgb(240,240,240,0);
+    font-size: 40px;
+    
+  }
+
+  .regresar-tableros{
+    position: fixed;
+	  bottom: 80px;
+	  right: 30px;
+  }
+  
+  .add-list-button:hover {
+    background-color: #c1c7cd;
+  }
+  
+  .add-list-button i {
+    margin-right: 6px;
+  }
+
+  .add-button-icon{
+    opacity: 60%;
+    margin-left: 10px; 
+    margin-bottom: 4px;
+    margin-right: 6px;
+    width: 12px;
+    align-items: left;
+  }
+
+  .add-tarjeta-confirm{
+    margin-top:5px;
+  }
+
+  .add-tarjeta-cancel{
+    border:none;
+    width: 10px;
+    height: 10px;
+    color:rgba(0, 0, 0, 100);
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
+  .input-tarjeta{
+    color: #F1F2F4;
+    border:none;
+    border-radius:5px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .cancel-icon{
+    width:25px;
+    height:25px;
+    margin-top: 8px;
+  }
