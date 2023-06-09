@@ -14,11 +14,11 @@ const getLists = async (req, res) => {
 };
 
 const createList = async (req, res) => {
-  const { name_list, id_board } = req.body;
+  const { name_list, id_board, position_list } = req.body;
   try {
-    if (typeof name_list === "string" && typeof id_board === "number") {
-      const listId = await listService.createList(name_list, id_board);
-      const lists = await listService.getLists(id_board); // Fetch the updated list of boards
+    if (typeof name_list === "string" && typeof id_board === "number" && typeof position_list === "number") {
+      const listId = await listService.createList(req.body);
+      const lists = await listService.getLists(id_board); 
       res.send({ listId, lists });
     } else {
       res.status(400).send({
@@ -33,10 +33,10 @@ const createList = async (req, res) => {
 };
 
 const updateList = async (req, res) => {
-  const { name_list, id_list, id_board } = req.body;
+  const { name_list, id_list, id_board, position_list } = req.body;
   try {
-    if (typeof name_list === "string" && typeof id_list === "number" && typeof id_board === "number") {
-      const listId = await listService.updateList(id_list, name_list);
+    if (typeof name_list === "string" && typeof id_list === "number" && typeof id_board === "number" && typeof position_list === "number") {
+      const listId = await listService.updateList(req.body);
       const lists = await listService.getLists(id_board); // Fetch the updated list of boards
       res.send({ listId, lists });
     } else {

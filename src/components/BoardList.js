@@ -31,7 +31,6 @@ const BoardList = () => {
           description_board: form.description_board
         }
       };
-      console.log(options.data);
       const response = await axios.request(options);
       getBoards();
       abrirModal();
@@ -40,7 +39,6 @@ const BoardList = () => {
     }
   }
 
-  //Ventana emergente modal
   const modalStyles = {
     position: "absolute",
     top: "40%",

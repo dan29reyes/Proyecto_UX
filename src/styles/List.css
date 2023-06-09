@@ -2,16 +2,24 @@
     background-color: rgba(250, 250, 250, 0.8);
     border-radius: 10px;
     box-shadow: 0 1px 0 rgba(9,30,66,.25);
-    display: flex;
-    flex-direction: column;
     margin-right: 15px;
     margin-bottom: 15px;
     padding: 8px;
-    position: relative;
     width: 305px;
     height: fit-content;
   }
   
+  .new-column {
+    background-color: rgba(250, 250, 250, 0.357);
+    border-radius: 10px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 8px;
+    width: 305px;
+    height: fit-content;
+  }
+
   .column-name {
     color: #172b4d;
     font-size: 18px;
@@ -64,9 +72,25 @@
   
   .column-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    white-space: nowrap;
+    width: 114.9%;
   }
+  
+  .column-wrapper::-webkit-scrollbar{
+    width: 4%;
+  }
+  
+  .column-wrapper::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+  
+  .column-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+  }
+  
 
   .add-list-button {
     background-color: rgb(240,240,240,0);
@@ -99,7 +123,7 @@
   }
   
   .add-list-button:hover {
-    background-color: #c1c7cd;
+    background-color: #c1c7cd75;
   }
   
   .add-list-button i {
@@ -116,7 +140,11 @@
   }
 
   .add-tarjeta-confirm{
-    margin-top:5px;
+    margin-top:-35px;
+  }
+
+  .add-lista-confirm{
+    margin-top:-25px;
   }
 
   .add-tarjeta-cancel{
@@ -125,21 +153,58 @@
     height: 10px;
     color:rgba(0, 0, 0, 100);
     margin-top: 5px;
-    margin-left: 10px;
+    margin-left: 2px;
   }
 
   .input-tarjeta{
-    color: #F1F2F4;
+    background-color: #F1F2F4;
+    border-radius: 5px;
     border:none;
-    border-radius:5px;
+    box-shadow: 0 1px 0 rgba(9,30,66,.25);
     margin-bottom: 10px;
     height: 30px;
     width: 100%;
     text-align: left;
+    text-indent: 15px;
   }
 
   .cancel-icon{
     width:25px;
     height:25px;
-    margin-top: 8px;
+    margin-top: -33px;
+  }
+
+  .add-lista-cancel{
+    border:none;
+    width: 10px;
+    height: 10px;
+    color:rgba(0, 0, 0, 100);
+  }
+
+  .lista-cancel-icon{
+    width:25px;
+    height:25px;
+    margin-top: -22px;
+  }
+
+  .scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    margin-bottom: 8px;
+    scrollbar-width: 20px;
+  }
+  
+  .scroll-wrapper::-webkit-scrollbar {
+    height: 10px;
+    width: 16px;
+  }
+  
+  .scroll-wrapper::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+  
+  .scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
   }

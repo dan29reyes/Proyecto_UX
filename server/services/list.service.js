@@ -15,11 +15,12 @@ const knex = require("knex")({
     return JSON.parse(lists);
   }
   
-  async function createList(name, boardId) {
+  async function createList(list) {
     try{
         const insertedRows = await knex('lists').insert({
-            name_list: name,
-            id_board: boardId,
+            name_list: list.name_list,
+            id_board: list.id_board,
+            position_list: list.position_list
         })
         console.log('Lista insertado: ',insertedRows);
     }catch(error){
@@ -39,10 +40,15 @@ const knex = require("knex")({
     }
   }
   
-  async function updateList(listId, name) {
+  async function updateList(list) {
     try{
         const boardUpdated = await knex('lists').where({
-            id_list:listId}).update({name_list: name});
+            id_list:list.id_list}).update({
+              name_list: list.name_list,
+              id_list: list.id_list,
+              id_board: list.id_board,
+              position_list: list.position_list
+            });
         console.log('List updated: ',boardUpdated);
     }catch(error){
         console.error('Error updating List: ',error);
