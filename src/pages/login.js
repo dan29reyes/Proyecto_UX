@@ -118,14 +118,14 @@ const LoginPage = () => {
             Don't have an account? <a href="/Registro">Sign Up</a>
           </div>
           </div>
-          </div>
-
+  </div> 
       </div>
           <footer>
             <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
           </footer>
          
-        
+          
+     
       
       </div>
     );
