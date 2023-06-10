@@ -63,55 +63,72 @@ const LoginPage = () => {
   }
 
   return (
-    <div className="loginbackground">
-      <div className="login-container">
-            <div className="logo-container">
-              <img src={logImg} width={100} alt="Login" style={{marginRight:'105px'}} />
+   
+      <div className="container-fluid"> 
+      <div className="background">
+            <div className="cube"></div>
+            <div className="cube"></div>
+            <div className="cube"></div>
+            <div className="cube"></div>
+            <div className="cube"></div>
+         
+        <div className="login-container">
+          <div className='login-content'>
+          <div className="logo-container">
+            
+            <img src={logImg} width={100} alt="Login" style={{marginRight:'105px'}} />
+          </div>
+          
+          <form onSubmit={handleLogin}>
+            <label htmlFor="email" style={{ marginRight: '10px' }}> 
+              <img src={userIcon} width={20} style={{ marginRight: '5px' }}/>
+              Email:
+            </label>
+            <div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="input-field"
+                onChange={handleChange}
+              />
             </div>
-            <form onSubmit={handleLogin}>
-              <label htmlFor="email" style={{ marginRight: '10px' }}> 
-                <img src={userIcon} width={20} style={{ marginRight: '5px' }}/>
-                Email:
-              </label>
-              <div>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="input-field"
-                  onChange={handleChange}
-                />
-              </div>
-              <label htmlFor="password" style={{ marginRight: '10px' }}>
-                <img src={passIcon} width={20} style={{ marginRight: '5px' }}/>
-                Password:
-              </label>
-              <div>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  className="input-field"
-                  onChange={handleChange}
-                />
-              </div>
-              <button type="submit" className="login-button">
-                Log In
-              </button>
-              <div className="forgot-password">
-                <a href="#">Forgot Password?</a>
-              </div>
-            </form>
-            <div className="signup">
-              Don't have an account? <a href="/Registro">Sign Up</a>
+            <label htmlFor="password" style={{ marginRight: '10px' }}>
+              <img src={passIcon} width={20} style={{ marginRight: '5px' }}/>
+              Password:
+            </label>
+            <div>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                className="input-field"
+                onChange={handleChange}
+              />
             </div>
+            <button type="submit" className="login-button">
+              Log In
+            </button>
+            <div className="forgot-password">
+              <a href="#">Forgot Password?</a>
+            </div>
+          </form>
+          <div className="signup">
+            Don't have an account? <a href="/Registro">Sign Up</a>
+          </div>
+          </div>
+          </div>
+          
       </div>
-      <footer>
-        <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
-      </footer>
-    </div>
+          <footer>
+            <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
+          </footer>
+         
+        
+      
+      </div>
+    );
     
-  );
-}
+  }
 
 export default LoginPage;

@@ -1,11 +1,32 @@
 .signup-content {
-    background: #ffffffc5;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
     margin: auto;
+    position: relative;
     border-radius: 10px;
     padding: 50px 100px;
     width: 450px;
-    
-}
+    max-width: 90%; 
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  
+    align-items: center;
+  }
+  
+  .signup-content:hover {
+    transform: scale(1.01); 
+    box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.2);
+  }
+  .signup-content input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+  }
 
 .form-group-register {
     overflow: hidden;
