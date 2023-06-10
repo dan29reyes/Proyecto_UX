@@ -39,7 +39,25 @@ const RegisterPage = () => {
   }
 
   return (
+    
     <div className='main-signup'>
+<div classname="context">
+  
+  </div>
+  <div class="area">
+          <ul class="circles">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+          </ul>
+  
       <section className='signup'>
         <div className='container-sign'>
           <div className='signup-content'>
@@ -89,7 +107,10 @@ const RegisterPage = () => {
         <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
       </footer>
     </div>
+    </div >
   );
 }
+
+
 
 export default RegisterPage;
