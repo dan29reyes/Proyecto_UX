@@ -62,7 +62,8 @@ const RegisterPage = () => {
         <div className='container-sign'>
           <div className='signup-content'>
             <form id="signup-form" className='signup-form'>
-              <h2 className='form-title'>Crear Cuenta</h2>
+              <h2 className='form-title'>
+                Crear/ Cuenta</h2>
               <div className="form-group-register">
                 <input
                   type="email"

@@ -65,6 +65,7 @@ const LoginPage = () => {
   return (
    
       <div className="container-fluid"> 
+      
       <div className="background">
             <div className="cube"></div>
             <div className="cube"></div>
@@ -118,7 +119,7 @@ const LoginPage = () => {
           </div>
           </div>
           </div>
-          
+
       </div>
           <footer>
             <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>

@@ -2,7 +2,8 @@
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin-top: 140px;
+    margin-left: 625px;
     position: relative;
     border-radius: 10px;
     padding: 50px 100px;
@@ -21,16 +22,17 @@
   }
   .signup-content input {
     margin-bottom: 10px;
-    padding: 10px;
-    border: 2px solid #ccc;
+    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
     width: 100%;
+    font-size: 16px;
+    
   }
 
 .form-group-register {
     overflow: hidden;
-    margin-bottom: 20px
+    margin-bottom: 10px
 }
 
 .form-input-register {
@@ -41,7 +43,7 @@
     -webkit-border-radius: 5px;
     -o-border-radius: 5px;
     -ms-border-radius: 5px;
-    padding: 17px 20px;
+    padding: 1px 20px;
     box-sizing: border-box;
     font-size: 14px;
     font-weight: 500;
@@ -74,11 +76,12 @@
     color: #555;
     font-weight: 500;
     text-align: center;
-    margin-top: 91px;
-    margin-bottom: 5px
+    margin-top:30px;
+    margin-bottom: 10px
 }
 
 .loginhere-link {
+    
     font-weight: 700;
     color: #222
 }
