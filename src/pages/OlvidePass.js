@@ -41,26 +41,30 @@ const OlvidePasswordPage = () => {
   };
 
   return (
+   
     <div className="reset-container">
-      <form onSubmit={handlePasswordReset}>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          className="input-field"
-          onChange={handleChange}
-        />
-        <button type="submit" className="reset-button">
-          Reset Password
-        </button>
-      </form>
-      <footer>
-        <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
-      </footer>
-    </div>
-    
-  );
+        <div className="background">
+ 
+  <form onSubmit={handlePasswordReset}>
+    <label htmlFor="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      className="input-field"
+      onChange={handleChange}
+    />
+    <button type="submit" className="reset-button">
+      Reset Password
+    </button>
+  </form>
+ </div>
+  <footer>
+    <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
+  </footer>
+</div>
+
+    );
 };
 
 export default OlvidePasswordPage;

@@ -42,7 +42,7 @@ const RegisterPage = () => {
     
     <div className='main-signup'>
 <div classname="context">
-  
+ 
   </div>
   <div class="area">
           <ul class="circles">
@@ -62,8 +62,7 @@ const RegisterPage = () => {
         <div className='container-sign'>
           <div className='signup-content'>
             <form id="signup-form" className='signup-form'>
-              <h2 className='form-title'>
-                Crear/ Cuenta</h2>
+              <h2 className='form-title'>Crear Cuenta</h2>
               <div className="form-group-register">
                 <input
                   type="email"
@@ -105,7 +104,7 @@ const RegisterPage = () => {
         </div>
       </section>
       <footer>
-        <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
+      <p>&copy;Kenneth Reyes / Franklin Rodriguez</p>
       </footer>
     </div>
     </div >
