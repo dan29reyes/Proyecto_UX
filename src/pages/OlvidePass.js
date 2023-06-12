@@ -1,11 +1,11 @@
 
 
 import React, { useState } from 'react';
-import '../styles/olvidepassword.css';
-import axios from 'axios';
+import '../styles/OlvidePass.css';
 import services from '../utils/services';
 import validator from '../utils/validator';
 import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const OlvidePasswordPage = () => {
   const navigate = useNavigate();
@@ -55,7 +55,11 @@ const OlvidePasswordPage = () => {
           Reset Password
         </button>
       </form>
+      <footer>
+        <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
+      </footer>
     </div>
+    
   );
 };
 

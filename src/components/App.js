@@ -4,6 +4,7 @@ import LoginContainer from "../pages/login";
 import ProjectContainer from "../pages/Project";
 import BoardContainer from "../pages/Boards";
 import RegisterContainer from "../pages/Register";
+import OlvidePasswordPage from '../pages/OlvidePass';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/Proyecto" element={<ProjectContainer/>}/>
         <Route path="/Tablero" element={<BoardContainer/>}/>
         <Route path="/Registro" element={<RegisterContainer/>}/>
+        <Route path="/Olvide" element={<OlvidePasswordPage/>}/>
       </Routes>
     </BrowserRouter>
   );
