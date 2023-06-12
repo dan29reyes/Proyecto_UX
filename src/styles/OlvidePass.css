@@ -1,0 +1,42 @@
+
+
+.reset-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .reset-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .reset-container label {
+    font-size: 1.2em;
+  }
+  
+  .input-field {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+  }
+  
+  .reset-button {
+    padding: 10px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .reset-button:hover {
+    background-color: #0056b3;
+  }
+  
