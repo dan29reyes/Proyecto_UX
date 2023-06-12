@@ -32,6 +32,17 @@ function postRegister(email, password) {
   });
 }
 
+function postOlvidePass(email) {
+  const options = {
+    method: 'POST',
+    url: 'http://localhost:8000/user/forgot-password',
+    data: { email: email }
+  };
+}
+
+
+
+
 export default {
-  postLogin, postRegister,
+  postLogin, postRegister,postOlvidePass
 };

@@ -2,8 +2,8 @@
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    margin-top: 140px;
-    margin-left: 625px;
+    margin-top: 70px;
+    margin-left: 435px;
     position: relative;
     border-radius: 10px;
     padding: 50px 100px;
@@ -12,7 +12,7 @@
     box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1); 
     transition: all 0.3s ease;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-  
+
     align-items: center;
   }
   
@@ -27,6 +27,7 @@
     border-radius: 5px;
     width: 100%;
     font-size: 16px;
+    
     
   }
 
@@ -101,6 +102,7 @@
     justify-content: flex-end;
     align-items: center;
     min-height: 100vh;
+    position: relative;
     
   }
   

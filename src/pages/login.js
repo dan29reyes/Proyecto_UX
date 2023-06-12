@@ -54,6 +54,27 @@ const LoginPage = () => {
       });
   }
 
+  const handleOlvidePass = async (e) => {
+    e.preventDefault();
+    if (!validator.isEmail(form.email)) {
+      console.log("Invalid email");
+    } else {
+      try {
+        const response = await services.postOlvidePass(form.email);
+        console.log(response);
+      } catch (error) {
+        console.error("An error occurred:", error);
+      }
+    }
+  }
+
+
+
+
+
+
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => ({
@@ -111,7 +132,7 @@ const LoginPage = () => {
               Log In
             </button>
             <div className="forgot-password">
-              <a href="#">Forgot Password?</a>
+              <a href="/Olvide">Forgot Password?</a>
             </div>
           </form>
           <div className="signup">
@@ -131,5 +152,6 @@ const LoginPage = () => {
     );
     
   }
+
 
 export default LoginPage;
