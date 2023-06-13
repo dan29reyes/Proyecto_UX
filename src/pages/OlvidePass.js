@@ -44,6 +44,7 @@ const OlvidePasswordPage = () => {
    
     <div className="reset-container">
         <div className="background">
+            
  
   <form onSubmit={handlePasswordReset}>
     <label htmlFor="email">Email:</label>

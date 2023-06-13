@@ -24,6 +24,7 @@ const RegisterPage = () => {
     } else {
       console.log("email good");
       const response = await services.postRegister(form.email, form.password);
+      navigate("/InicioSesion")
     }
   }
 
@@ -41,11 +42,11 @@ const RegisterPage = () => {
   return (
     
     <div className='main-signup'>
-<div classname="context">
+<div className="context">
  
   </div>
-  <div class="area">
-          <ul class="circles">
+  <div className="area">
+          <ul className="circles">
                   <li></li>
                   <li></li>
                   <li></li>

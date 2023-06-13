@@ -36,44 +36,6 @@ const LoginPage = () => {
       }
     }
   };
-  
-  const handleRegister = async (e) => {
-    e.preventDefault();
-    if (!validator.isEmail(form.email)) {
-      console.log("email bad")
-    } else {
-      console.log("email good");
-      services.postRegister(form.email, form.password);
-    }
-    axios.post('http://localhost:8000/user/register', form)
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch(({ response }) => {
-        console.log(response);
-      });
-  }
-
-  const handleOlvidePass = async (e) => {
-    e.preventDefault();
-    if (!validator.isEmail(form.email)) {
-      console.log("Invalid email");
-    } else {
-      try {
-        const response = await services.postOlvidePass(form.email);
-        console.log(response);
-      } catch (error) {
-        console.error("An error occurred:", error);
-      }
-    }
-  }
-
-
-
-
-
-
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -140,14 +102,14 @@ const LoginPage = () => {
           </div>
           </div>
   </div> 
-      </div>
+      
           <footer>
             <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
           </footer>
          
           
      
-      
+      </div>
       </div>
     );
     

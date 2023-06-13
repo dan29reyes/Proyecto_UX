@@ -5,7 +5,7 @@ function postLogin(email, password) {
     method: 'POST',
     url: 'http://localhost:8000/user/login',
     data: { email: email, password: password }
-  };;
+  };
 
   return axios.request(options)
     .then(function (response) {
@@ -25,10 +25,13 @@ function postRegister(email, password) {
     data: { email: email, password: password }
   };
 
-  axios.request(options).then(function (response) {
+  return axios.request(options)
+  .then(function (response) {
     console.log(response.data);
+    return response.data;
   }).catch(function (error) {
     console.error(error);
+    throw error;
   });
 }
 
@@ -39,9 +42,6 @@ function postOlvidePass(email) {
     data: { email: email }
   };
 }
-
-
-
 
 export default {
   postLogin, postRegister,postOlvidePass
