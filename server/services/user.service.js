@@ -3,7 +3,7 @@ const knex = require("knex")({
     connection: {
       host: "127.0.0.1",
       port: 3306,
-      user: "root",
+      user: "newuser",
       password: "contra",
       database: "admin_tablero",
     },
