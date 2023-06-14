@@ -3,14 +3,11 @@
 .login-content {
   background: #ffffffc5;
   padding: 20px 30px;
-  margin: 50px auto;
-  margin-left: -5px;
+  align-items: center;
   border-radius: 10px;
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
   width: 450px;
   max-width: 80%; 
-  
- 
   font-family: 'Roboto', sans-serif;
   transition: all 0.3s ease; 
 }
@@ -22,14 +19,12 @@
 }
 .login-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-left: 40%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 70%;
   justify-content: center;
   height: 100vh;
-  position: relative;
-
   font-family: 'Roboto', sans-serif;
 }
 
@@ -42,7 +37,6 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
   align-items: center;
   justify-content: center;
   width: 100%;
