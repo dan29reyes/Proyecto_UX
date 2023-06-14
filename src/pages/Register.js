@@ -4,6 +4,7 @@ import services from '../utils/services';
 import validator from '../utils/validator';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import emailjs from 'emailjs-com';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -24,7 +25,27 @@ const RegisterPage = () => {
     } else {
       console.log("email good");
       const response = await services.postRegister(form.email, form.password);
-      navigate("/InicioSesion")
+      if (response.success === true) {
+        console.log("user created");
+        const templateParams = {
+          to_email: form.email,
+          message: 'Organiza, colabora y sigue el progreso de tus proyectos de manera fácil y eficiente.'
+          +'Simplifica tu trabajo y mantén todo bajo control con Trollo.'
+          +'\n¡Comienza a gestionar tus proyectos de forma efectiva hoy mismo!',
+          to_name: 'Daniel Reyes'
+        };
+        emailjs.send('service_o47wivh', 'template_qgp002o', templateParams, '3COK_9QAiqVYnnt71')
+          .then(() => {
+            console.log('Correo de confirmación enviado con éxito');
+          })
+          .catch((error) => {
+            console.error('Error al enviar el correo de confirmación:', error);
+          });
+        navigate("/InicioSesion");
+      } else if (response.success === false) {
+        console.log("user exists");
+        setUserExists(true);
+      }
     }
   }
 
