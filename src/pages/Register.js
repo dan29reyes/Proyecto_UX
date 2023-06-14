@@ -9,6 +9,7 @@ import emailjs from 'emailjs-com';
 const RegisterPage = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
+    name: '',
     email: '',
     password: '',
     rePassword: ''
@@ -32,7 +33,7 @@ const RegisterPage = () => {
           message: 'Organiza, colabora y sigue el progreso de tus proyectos de manera fácil y eficiente.'
           +'Simplifica tu trabajo y mantén todo bajo control con Trollo.'
           +'\n¡Comienza a gestionar tus proyectos de forma efectiva hoy mismo!',
-          to_name: 'Daniel Reyes'
+          to_name: form.name
         };
         emailjs.send('service_o47wivh', 'template_qgp002o', templateParams, '3COK_9QAiqVYnnt71')
           .then(() => {
@@ -84,8 +85,16 @@ const RegisterPage = () => {
         <div className='container-sign'>
           <div className='signup-content'>
             <form id="signup-form" className='signup-form'>
-              <h2 className='form-title'>Crear Cuenta</h2>
+              <h2 className='form-title-signup'>Crear Cuenta</h2>
               <div className="form-group-register">
+                <input
+                  type="text"
+                  className='form-input-register'
+                  name="name"
+                  id="name"
+                  placeholder="Nombre Completo"
+                  onChange={handleChange}
+                />
                 <input
                   type="email"
                   className='form-input-register'
@@ -94,8 +103,6 @@ const RegisterPage = () => {
                   placeholder="Correo electrónico"
                   onChange={handleChange}
                 />
-              </div>
-              <div className="form-group-register">
                 <input
                   type="password"
                   className='form-input-register'
@@ -104,8 +111,6 @@ const RegisterPage = () => {
                   placeholder="Contraseña"
                   onChange={handleChange}
                 />
-              </div>
-              <div>
                 <input
                   type="password"
                   className='form-input-register'
