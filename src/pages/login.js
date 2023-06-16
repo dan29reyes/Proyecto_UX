@@ -3,7 +3,6 @@ import '../styles/login.css';
 import logImg from "../images/login_user.png";
 import userIcon from "../images/usericon.png";
 import passIcon from "../images/keyicon.png";
-import axios from 'axios';
 import services from '../utils/services';
 import validator from '../utils/validator';
 import { useNavigate } from 'react-router-dom';

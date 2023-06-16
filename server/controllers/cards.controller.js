@@ -31,12 +31,13 @@ const updateCard = async (req, res) => {
   try {
     if (typeof id_card == "number" && typeof name_card == "string" && typeof description_card == "string" 
     && typeof id_list == "number" && typeof position_card == "number") {
-      const [cardId] = await cardService.updateCard(req.body);
+      const cardId = await cardService.updateCard(req.body);
       res.send({ cardId });
     }
   } catch (e) {
     res.status(500).send({
       error: e.toString(),
+      message:"hola"
     });
   }
 }

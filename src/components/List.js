@@ -7,6 +7,7 @@ import addIcon from "../images/add-icon.png";
 import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
 import cancelIcon from "../images/cancel-icon.png"
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const CardList = () => {
   const [lists, setLists] = useState([]);
@@ -76,28 +77,45 @@ const CardList = () => {
         url: 'http://localhost:8000/cards/viewCards',
         data: { id_list: list.id_list }
       };
-
+  
       return axios.request(options)
         .then(function (response) {
-          return { listId: list.id_list, cards: response.data };
+          const sortedCards = response.data.sort((a, b) => a.position_card - b.position_card);
+          return { listId: list.id_list, cards: sortedCards };
         })
         .catch(function (error) {
           console.error(error);
           return { listId: list.id_list, cards: [] };
         });
     });
-
+  
     Promise.all(requests)
       .then(function (results) {
         const columnData = {};
-
+  
         results.forEach((result) => {
           columnData[result.listId] = result.cards;
         });
-
+  
         setCards(columnData);
       });
-  };
+  };  
+
+  const getCardsById = async (_idList) => {
+    const options = {
+      method: 'POST',
+      url: 'http://localhost:8000/cards/viewCards',
+      data: { id_list: _idList}
+    };
+    return await axios.request(options)
+        .then(function (response) {
+          return response.data;
+        })
+        .catch(function (error) {
+          console.error(error);
+          return [] ;
+        });
+  }
 
   const toggleListInput = () => { 
     setShowListInput(!showListInput)
@@ -150,7 +168,80 @@ const CardList = () => {
     }
   }
 
+  const onDragEnd = async (result, lists) => {
+    if (!result.destination) return;
+      const { source, destination } = result;
+      const sourceCards = await getCardsById(source.droppableId);
+      const destCards = await getCardsById(destination.droppableId);
+      const removed = sourceCards[source.index];
+      sourceCards.splice(source.index, 1);
+      destCards.splice(destination.index, 0, removed);
+      //Actualizar la lista de origen
+      try{
+        const options = {
+          method: 'POST',
+          url: 'http://localhost:8000/cards/updateCard',
+          data: {
+            id_card: removed.id_card,
+            name_card: removed.name_card,
+            description_card: removed.description_card,
+            id_list: parseInt(destination.droppableId),
+            position_card: destination.index
+          }
+        };
+        console.log(options.data)
+        await axios.request(options);
+      }catch(error){
+        console.error(error);
+      }
+      const newCards = await getCardsById(destination.droppableId);
+      //Actualizar todas las posiciones de origin
+      if (source.droppableId !== destination.droppableId) {
+        for (let i = 0; i < sourceCards.length; i++) {
+          const options = {
+            method: 'POST',
+            url: 'http://localhost:8000/cards/updateCard',
+            data: { 
+              id_card: sourceCards[i].id_card,
+              name_card: sourceCards[i].name_card,
+              description_card: sourceCards[i].description_card,
+              id_list: parseInt(sourceCards[i].id_list),
+              position_card: i+1
+            }
+          };
+          await axios.request(options);
+        }
+      }
+      //Actualizar todas las posiciones de destino
+      for (let i = 0; i < newCards.length; i++) {
+        let __position_card = 0;
+        let pos = newCards[i].position_card
+        if (pos === destination.index){
+          for (let j = pos; j < newCards.length; j++) {
+            console.log(j)
+            newCards[j].position_card = j+1;
+          }
+        }
+        __position_card = pos+1;
+        
+        const options = {
+          method: 'POST',
+          url: 'http://localhost:8000/cards/updateCard',
+          data: { 
+            id_card: newCards[i].id_card,
+            name_card: newCards[i].name_card,
+            description_card: newCards[i].description_card,
+            id_list: parseInt(newCards[i].id_list),
+            position_card: __position_card
+          }
+        };
+        await axios.request(options);
+      }
+      getCards();
+  };
+  
   return (
+    <DragDropContext onDragEnd={result => onDragEnd(result, lists)}>
       <div className="container">
         <div className="column-wrapper">
           {lists?.map((list) => (
@@ -162,13 +253,31 @@ const CardList = () => {
                 </h3>
               </div>
               <div className="column-cards">
-                {cards[list.id_list]?.map((card) => (
-                  <Card
-                    key={card.id_card}
-                    name_card={card.name_card}
-                    description_card={card.description_card}
-                  />
-                ))}
+                <Droppable droppableId={list.id_list.toString()}>{
+                  (provided) => (
+                    <div ref={provided.innerRef} {...provided.droppableProps}>
+                      {cards[list.id_list]?.map((card, index) => (
+                        <Draggable key={card.id_card} draggableId={card.id_card.toString()} index={index}>
+                          {(provided) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                          >
+                            <Card
+                              key={card.id_card}
+                              name_card={card.name_card}
+                              description_card={card.description_card}
+                              index={index}
+                            />
+                          </div>
+                          )}
+                        </Draggable>
+                      ))}
+                      {provided.placeholder}
+                    </div>
+                  )}
+                </Droppable>
                 {showCardInputs[list.id_list] ? (
                   formCard.id_list=list.id_list,
                   formCard.position_card=(cards[list.id_list].length+1),
@@ -256,6 +365,7 @@ const CardList = () => {
         </Link>
       </div>
     </div>
+    </DragDropContext>
   );
 };
 

@@ -40,11 +40,11 @@ html {
   .board {
 	width: 230px;
 	background-image: url('../images/circles.png');
-	background-size: 340px 95px;
+	background-size: 340px 115px;
 	background-color: #268dd1;
 	border: 1px solid #ccc;
-	border-radius: 10px;
-	padding: 10px;
+	border-radius: 5px;
+	padding: 1rem;
 	margin-bottom: 10px;
 	margin-right: 10px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -141,10 +141,22 @@ html {
   }
 
   .column-container {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	overflow-y: auto;
+	overflow-x: auto;
   }
   
-  
-  
+  @media (min-width: 300px) {
+	.column-container { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 600px) {
+	.column-container { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (min-width: 900px) {
+	.column-container { grid-template-columns: repeat(4, 1fr); }
+  }
+
   
