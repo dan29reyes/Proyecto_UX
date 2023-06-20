@@ -3,7 +3,7 @@ const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 
 const { isEmail } = require("../utils/validator");
-const { registerUser, getCredentials } = require("../services/user.service");
+const { registerUser, getCredentials, forgotPassword } = require("../services/user.service");
 
 async function register(req, res) {
   try{
@@ -83,7 +83,42 @@ async function login(req, res) {
   }
 }
 
+async function forgot(req, res) {
+  try{
+    const { email, password } = req.body;
+    const errorMessages = [];
+    if (!isEmail(email)) {
+      errorMessages.push("Email is not valid");
+    }
+
+    if (errorMessages.length) {
+      res.status(HTTPCodes.BAD_REQUEST).send({ error: errorMessages });
+    } else {
+      const salt = crypto.randomBytes(128).toString("base64");
+      const encryptedPassword = crypto
+        .pbkdf2Sync(password, salt, 30000, 64, "sha256")
+        .toString("base64");
+      await forgotPassword({
+        ...req.body,
+        encryptedPassword,
+        salt,
+      });
+
+      res.send({
+        success: true,
+        message: "password updated"
+      });
+    }
+  }catch(e){
+    res.status(HTTPCodes.INTERNAL_SERVER_ERROR).send({
+      message: "Internal server error",
+      detail: e.toString(),
+    });
+  }
+}
+
 module.exports = {
   register,
   login,
+  forgot,
 };

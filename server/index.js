@@ -15,4 +15,6 @@ app.use("/user", userRouter);
 app.use("/boards", boardRouter)
 app.use("/lists", listRouter)
 
-app.listen(8000);
+app.listen(8000 , () => {
+    console.log("Server started!");
+});

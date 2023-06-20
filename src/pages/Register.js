@@ -62,79 +62,76 @@ const RegisterPage = () => {
   }
 
   return (
-    
     <div className='main-signup'>
-<div className="context">
- 
-  </div>
-  <div className="area">
-          <ul className="circles">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-          </ul>
-  
-      <section className='signup'>
-        <div className='container-sign'>
-          <div className='signup-content'>
-            <form id="signup-form" className='signup-form'>
-              <h2 className='form-title-signup'>Crear Cuenta</h2>
-              <div className="form-group-register">
-                <input
-                  type="text"
-                  className='form-input-register'
-                  name="name"
-                  id="name"
-                  placeholder="Nombre Completo"
-                  onChange={handleChange}
-                />
-                <input
-                  type="email"
-                  className='form-input-register'
-                  name="email"
-                  id="email"
-                  placeholder="Correo electrónico"
-                  onChange={handleChange}
-                />
-                <input
-                  type="password"
-                  className='form-input-register'
-                  name="password"
-                  id="password"
-                  placeholder="Contraseña"
-                  onChange={handleChange}
-                />
-                <input
-                  type="password"
-                  className='form-input-register'
-                  name="rePassword"
-                  id="re_password"
-                  placeholder="Confirmar Contraseña"
-                  onChange={handleChange}
-                />
-                {passwordMismatch && <div className="password-mismatch">Las contraseñas no coinciden</div>}
-                {userExists && <div className="user-exists">El usuario ya existe</div>}
-              </div>
-              <input type="submit" name="submit" id="submit" className="form-submit-register" value="Crear Cuenta" onClick={handleRegister} />
-            </form>
-            <p className='loginhere'>
-              ¿Ya tienes una cuenta? <a href="/InicioSesion" className='loginhere-link'>Inicia Sesión</a>
-            </p>
+      <div className="context">
+      </div>
+      <div className="area">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <section className='signup'>
+          <div className='container-sign'>
+            <div className='signup-content'>
+              <form id="signup-form" className='signup-form'>
+                <h2 className='form-title-signup'>Crear Cuenta</h2>
+                <div className="form-group-register">
+                  <input
+                    type="text"
+                    className='form-input-register'
+                    name="name"
+                    id="name"
+                    placeholder="Nombre Completo"
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="email"
+                    className='form-input-register'
+                    name="email"
+                    id="email"
+                    placeholder="Correo electrónico"
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="password"
+                    className='form-input-register'
+                    name="password"
+                    id="password"
+                    placeholder="Contraseña"
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="password"
+                    className='form-input-register'
+                    name="rePassword"
+                    id="re_password"
+                    placeholder="Confirmar Contraseña"
+                    onChange={handleChange}
+                  />
+                  {passwordMismatch && <div className="password-mismatch">Las contraseñas no coinciden</div>}
+                  {userExists && <div className="user-exists">El usuario ya existe</div>}
+                </div>
+                <input type="submit" name="submit" id="submit" className="form-submit-register" value="Crear Cuenta" onClick={handleRegister} />
+              </form>
+              <p className='loginhere'>
+                ¿Ya tienes una cuenta? <a href="/InicioSesion" className='loginhere-link'>Inicia Sesión</a>
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-      <footer>
-      <p>&copy;Kenneth Reyes / Franklin Rodriguez</p>
-      </footer>
+        </section>
+        <footer>
+        <p>&copy;Kenneth Reyes / Franklin Rodriguez</p>
+        </footer>
+      </div>
     </div>
-    </div >
   );
 }
 

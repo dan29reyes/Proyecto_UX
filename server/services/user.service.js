@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const knex = require("knex")({
-    client: "mysql",
+    client: process.env.DB_CLIENT,
     connection: {
       host: process.env.DB_HOST,
       port: process.env.DB_PORT,
@@ -24,8 +24,17 @@ const knex = require("knex")({
     return JSON.parse(credentials);
   }
   
+  const forgotPassword = async (user) => {
+    console.log("ping")
+    return await knex("users").where({email_user: user.email}).update({
+      password_user: user.encryptedPassword,
+      salt_user: user.salt,
+    });
+  }
+
   module.exports = {
     getCredentials,
     registerUser,
+    forgotPassword,
   };
   

@@ -13,7 +13,7 @@ function postLogin(email, password) {
       return response.data;
     })
     .catch(function (error) {
-      console.error(error);
+      console.log(error);
       throw error;
     });
 }
@@ -30,18 +30,29 @@ function postRegister(email, password) {
     console.log(response.data);
     return response.data;
   }).catch(function (error) {
-    console.error(error);
+    console.log(error);
     throw error;
   });
 }
 
-function postOlvidePass(email) {
+function postOlvidePass(email, password) {
   const options = {
     method: 'POST',
     url: 'http://localhost:8000/user/forgot-password',
-    data: { email: email }
+    data: { 
+      email: email,
+      password: password,
+    }
   };
-}
+  return axios.request(options)
+  .then(function (response) {
+    console.log(response.data);
+    return response.data;
+  }).catch(function (error) {
+    console.log(error);
+    throw error;
+  })
+};
 
 export default {
   postLogin, postRegister,postOlvidePass
