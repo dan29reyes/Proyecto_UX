@@ -100,7 +100,7 @@ const BoardList = () => {
     try {
       const options = {
         method: 'POST',
-        url: 'http://localhost:8000/boards/deleteBoard',
+        url: 'http://localhost:8000/boards/deleteCard',
         data: { id_board: id_board }
       };
       await axios.request(options);

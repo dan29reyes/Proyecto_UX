@@ -20,6 +20,49 @@ body{
 	flex-direction: column;
 	justify-content: center;
 }
+.button-container {
+    margin-top: 20px;
+  }
+  
+  .login-button{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button {
+    background-color: #3943B7;
+    color: #fff;
+  }
+  
+  .register-button {
+    background-color: #FF3562;
+    color: #fff;
+  }
+  
+  .login-button:hover,
+  .register-button:hover {
+    background-color: #243c85;
+  }
+  
 
 a{
     text-decoration: none;
@@ -31,7 +74,7 @@ a{
 
 .menu a{
     margin: 30px 0;
-    color: #000;
+    color: #030000;
 }
 
 .page{
@@ -45,7 +88,7 @@ a{
 
 #p1{
     width: 100%;
-    background: #419D78;
+    background: #000a06;
     left: 0;
 }
 
@@ -74,7 +117,8 @@ a{
 
 .page {
     font-family: 'Bangers', cursive;
-	color: #fff;
+	color: #f8f2f2;
+    
     font-size: larger;
     letter-spacing: 0.2em;
 }
@@ -131,6 +175,7 @@ a{
   transition-delay: 1s;
 }
 
+
 footer{
     
     background-color: hsla(0, 0%, 92%, 0);
@@ -146,3 +191,72 @@ footer a i{
     font-size: 50px;
     margin-bottom:20rem;
 }
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  padding-right: 10px;
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  border-inline-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:  #151719;
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.waviy span {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 110px;
+  position: relative;
+  display: inline-block;
+  color: #030000;
+  text-transform: uppercase;
+  animation: waviy 3s infinite;
+  animation-delay: calc(.1s * var(--i));
+  
+}
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
+
+
