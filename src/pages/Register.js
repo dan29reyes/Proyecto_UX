@@ -20,14 +20,14 @@ const RegisterPage = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     if (!validator.isEmail(form.email)) {
-      console.log("email bad");
+      alert("email bad");
     } else if (form.password !== form.rePassword) {
       setPasswordMismatch(true);
     } else {
-      console.log("email good");
+      alert("email good");
       const response = await services.postRegister(form.email, form.password);
       if (response.success === true) {
-        console.log("user created");
+        alert("user created");
         const templateParams = {
           to_email: form.email,
           message: 'Organiza, colabora y sigue el progreso de tus proyectos de manera fácil y eficiente.'
@@ -37,14 +37,14 @@ const RegisterPage = () => {
         };
         emailjs.send('service_o47wivh', 'template_qgp002o', templateParams, '3COK_9QAiqVYnnt71')
           .then(() => {
-            console.log('Correo de confirmación enviado con éxito');
+            alert('Correo de registro enviado con éxito');
           })
           .catch((error) => {
-            console.error('Error al enviar el correo de confirmación:', error);
+            alert('Error al enviar el correo de confirmación:', error);
           });
         navigate("/InicioSesion");
       } else if (response.success === false) {
-        console.log("user exists");
+        alert("user exists");
         setUserExists(true);
       }
     }

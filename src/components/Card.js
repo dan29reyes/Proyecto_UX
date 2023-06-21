@@ -1,4 +1,5 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Card({name_card, description_card}) {
   return (
@@ -6,7 +7,7 @@ function Card({name_card, description_card}) {
       <div className="card" style={{ width: "18rem" }}>
         <div className="card-body">
           <h5 className="card-title">{name_card}</h5>
-          <p className="card-text">{description_card}</p>
+          <p>{description_card}</p>
         </div>
       </div>
     </div>

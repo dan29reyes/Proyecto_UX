@@ -18,7 +18,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!validator.isEmail(form.email)) {
-      console.log("email bad");
+      alert("email bad");
     } else {
       try {
         const response = await services.postLogin(form.email, form.password);
@@ -28,9 +28,9 @@ const LoginPage = () => {
         navigate("/Tablero");
       } catch (error) {
         if (error.response && error.response.status === 401) {
-          console.log("Invalid credentials");
+          alert("Invalid credentials");
         } else {
-          console.log("An error occurred:", error);
+          alert("An error occurred:", error);
         }
       }
     }
@@ -45,23 +45,18 @@ const LoginPage = () => {
   }
 
   return (
-   
-      <div className="container-fluid"> 
-      
+    <div className="container-fluid"> 
       <div className="background">
-            <div className="cube"></div>
-            <div className="cube"></div>
-            <div className="cube"></div>
-            <div className="cube"></div>
-            <div className="cube"></div>
-         
-        <div className="login-container">
-          <div className='login-content'>
-          <div className="logo-container">
-            
+        <div className="cube"></div>
+        <div className="cube"></div>
+        <div className="cube"></div>
+        <div className="cube"></div>
+        <div className="cube"></div>
+      <div className="login-container">
+        <div className='login-content'>
+          <div className="logo-container">    
             <img src={logImg} width={100} alt="Login" style={{marginRight:'105px'}} />
-          </div>
-          
+          </div>  
           <form onSubmit={handleLogin}>
             <label htmlFor="email" style={{ marginRight: '10px' }}> 
               <img src={userIcon} width={20} style={{ marginRight: '5px' }}/>
@@ -87,7 +82,7 @@ const LoginPage = () => {
                 name="password"
                 className="input-field"
                 onChange={handleChange}
-              />
+            />
             </div>
             <button type="submit" className="login-button">
               Log In
@@ -99,20 +94,15 @@ const LoginPage = () => {
           <div className="signup">
             Don't have an account? <a href="/Registro">Sign Up</a>
           </div>
-          </div>
-  </div> 
-      
-          <footer>
-            <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
-          </footer>
-         
-          
-     
-      </div>
-      </div>
-    );
-    
-  }
+        </div>
+      </div> 
+      <footer>
+        <p>&copy; Kenneth Reyes / Franklin Rodriguez</p>
+      </footer>
+    </div>
+  </div>
+  );    
+}
 
 
 export default LoginPage;

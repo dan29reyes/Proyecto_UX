@@ -41,7 +41,6 @@ const CardList = () => {
       ...prevState,
       [name]: value
     }));
-    console.log(formCard)
   }
 
   useEffect(() => {
@@ -66,7 +65,7 @@ const CardList = () => {
         setLists(response.data);
       })
       .catch(function (error) {
-        console.error(error);
+        alert(error);
       });
   };
 
@@ -84,7 +83,7 @@ const CardList = () => {
           return { listId: list.id_list, cards: sortedCards };
         })
         .catch(function (error) {
-          console.error(error);
+          alert(error);
           return { listId: list.id_list, cards: [] };
         });
     });
@@ -112,7 +111,7 @@ const CardList = () => {
           return response.data;
         })
         .catch(function (error) {
-          console.error(error);
+          alert(error);
           return [] ;
         });
   }
@@ -195,7 +194,7 @@ const CardList = () => {
       };
       await axios.request(sourceUpdateOptions);
     } catch (error) {
-      console.error(error);
+      alert(error);
     }
   
     const newCards = await getCardsById(destinationListId);

@@ -59,15 +59,19 @@
     background-color: #F1F2F4;
     border-radius: 5px;
     box-shadow: 0 1px 0 rgba(9,30,66,.25);
-    cursor: pointer;
-    display: block;
     margin-bottom: 8px;
     position: relative;
-    text-decoration: none;
-    z-index: 0;
     width: 100%;
     min-height: 35px;
     height: 100%;
+  }
+
+  .card-body{
+    padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
   }
   
   .column-wrapper {

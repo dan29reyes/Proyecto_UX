@@ -9,11 +9,9 @@ function postLogin(email, password) {
 
   return axios.request(options)
     .then(function (response) {
-      console.log(response.data)
       return response.data;
     })
     .catch(function (error) {
-      console.log(error);
       throw error;
     });
 }
@@ -28,9 +26,7 @@ function postRegister(email, password) {
   return axios.request(options)
   .then(function (response) {
     console.log(response.data);
-    return response.data;
   }).catch(function (error) {
-    console.log(error);
     throw error;
   });
 }
@@ -46,10 +42,8 @@ function postOlvidePass(email, password) {
   };
   return axios.request(options)
   .then(function (response) {
-    console.log(response.data);
     return response.data;
   }).catch(function (error) {
-    console.log(error);
     throw error;
   })
 };

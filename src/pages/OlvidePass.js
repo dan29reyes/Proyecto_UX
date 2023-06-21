@@ -5,7 +5,6 @@ import validator from '../utils/validator';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import emailjs from 'emailjs-com';
-import { set } from 'animejs';
 
 const OlvidePasswordPage = () => {
   const navigate = useNavigate();
@@ -60,9 +59,9 @@ const OlvidePasswordPage = () => {
           });
       } catch (error) {
         if (error.response && error.response.status === 401) {
-          console.log("Email not found");
+          alert("Email not found");
         } else {
-          console.log("An error occurred:", error);
+          alert("An error occurred:", error);
         }
       }
     }
@@ -83,7 +82,7 @@ const OlvidePasswordPage = () => {
           alert("Contraseña cambiada con exito");
         } catch (error) {
           if (error.response && error.response.status === 401) {
-            console.log("Invalid code");
+            alert("Invalid code");
           }
         }
       }
