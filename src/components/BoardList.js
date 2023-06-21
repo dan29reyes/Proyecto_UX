@@ -52,7 +52,16 @@ const BoardList = () => {
     setModal(!modal);
   }
 
-  //boards que se muestran en la pagina
+  const [hoveredBoard, setHoveredBoard] = useState(null);
+
+  const handleMouseEnter = (boardId) => {
+    setHoveredBoard(boardId);
+  }
+
+  const handleMouseLeave = () => {
+    setHoveredBoard(null);
+  }
+
   const [boards, setBoards] = useState([]);
 
   useEffect(() => {
@@ -87,6 +96,20 @@ const BoardList = () => {
     localStorage.setItem("id_board", id_board);
   }
 
+  const deleteBoard = async (id_board) => {
+    try {
+      const options = {
+        method: 'POST',
+        url: 'http://localhost:8000/boards/deleteBoard',
+        data: { id_board: id_board }
+      };
+      await axios.request(options);
+      getBoards();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="container">
       <h1>Tableros</h1>
@@ -94,19 +117,33 @@ const BoardList = () => {
         {boards.length > 0 ? (
           <div className="column-container">
             {boards.map((board) => (
-              <Link
+              <div
                 key={board.id_board}
                 className="board-button"
-                to="/Proyecto"
-                onClick={() => handleBoardClick(board.id_board)}
+                onMouseEnter={() => handleMouseEnter(board.id_board)}
+                onMouseLeave={handleMouseLeave}
               >
-                <Board
-                  name_board={board.name_board}
-                  description_board={board.description_board}
-                  update_date={formatUpdateDate(board.update_date)}
-                  style={"board"}
-                />
-              </Link>
+                <Link
+                  to="/Proyecto"
+                  onClick={() => handleBoardClick(board.id_board)}
+                >
+                  <Board
+                    name_board={board.name_board}
+                    description_board={board.description_board}
+                    update_date={formatUpdateDate(board.update_date)}
+                    style={"board"}
+                  />
+                </Link>
+                {hoveredBoard === board.id_board && (
+                  <Button
+                    className="deleteBoard"
+                    color="danger"
+                    onClick={() => deleteBoard(board.id_board)}
+                  >
+                    Eliminar Tablero
+                  </Button>
+                )}
+              </div>
             ))}
             <button className="board-button" onClick={abrirModal}>
               <Board
