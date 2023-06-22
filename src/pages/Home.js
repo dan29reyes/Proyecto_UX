@@ -23,18 +23,22 @@ const HomePage = () => {
             <a href="#t3" className="three"><i className="fab fa-slack-hash"></i></a>
           </div>
           <div className="page" id="p1">
-            <div className="wrap">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-12 text-center">
-                    <h3 className="animate-charcter">Trollo</h3>
-                  </div>
-                </div>
-              </div>
-              <h2> Tu pagina de confianza para llevar tus proyectos a otro nivel</h2>
-              <p>Trello? ¿Qué es eso? ¡Aquí puro pinche Trollo!</p>
-            </div>
+  <div className="wrap">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 text-center">
+          <div class="content">
+            <h2>Trollo</h2>
+            <h2>Trollo</h2>
           </div>
+        </div>
+      </div>
+    </div>
+    <h2>¿Te sientes ahogado con tus proyectos? ¡Deja que Trollo los lleve a otro nivel!</h2>
+    <p>Trollo te sabra con balde de agua fria </p>
+  </div>
+</div>
+
           <div className="page" id="p2">
   <div className="wrap">
     <div className="waviy">
@@ -49,7 +53,7 @@ const HomePage = () => {
       <span style={{ '--i': 9 }}>T</span>
       <span style={{ '--i': 10 }}>E</span>
     </div>
-    <p>Organiza, colabora y sigue el progreso de tus proyectos de manera fácil y eficiente.</p>
+    <p>¿Listo para llevar tus proyectos al siguiente nivel? Regístrate en Trollo y descubre una nueva forma de organizar, colaborar y hacer realidad tus ideas. ¡Únete ahora y comienza a construir el éxito!</p>
     <div className="button-container">
       <a href="/Registro" className="register-button">Sign Up</a>
     <a href="/InicioSesion" className="login-button">Login</a>
