@@ -32,7 +32,7 @@ const HomePage = () => {
                 </div>
               </div>
               <h2> Tu pagina de confianza para llevar tus proyectos a otro nivel</h2>
-              <span>Trello? ¿Qué es eso? ¡Aquí puro pinche Trollo!</span>
+              <p>Trello? ¿Qué es eso? ¡Aquí puro pinche Trollo!</p>
             </div>
           </div>
           <div className="page" id="p2">
@@ -50,29 +50,40 @@ const HomePage = () => {
       <span style={{ '--i': 10 }}>E</span>
     </div>
     <p>Organiza, colabora y sigue el progreso de tus proyectos de manera fácil y eficiente.</p>
-    
+  
     <div className="button-container">
-
+    
+    <a href="/Registro" className="register-button">Sign Up</a>
 
 
     </div>
   </div>
 </div>
 
-          <div className="page" id="p3">
-            <div className="wrap">
-              <h2> ABout us</h2>
-              <p>Somos unos virgos que por aburrimiento tuvimos ganas de joder el bote.</p>
-              <span> Siguenos para saber más sobre nuestros proyectos</span>
-              <footer>
-                <a href="https://www.instagram.com/franklinrtinoco/">
-                  <i className="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.instagram.com/29danireyes/">
-                  <i className="fab fa-instagram"></i>
-                </a>
-              </footer>
-            </div>
+<div className="page" id="p3">
+  <div className="wrap">
+    <h1>
+      <span>About</span>
+      <div class="message">
+        <div class="word1">Us</div>
+        <div class="word2">Nosotros</div>
+        <div class="word3">Nous</div>
+      </div>
+    </h1>
+    <p>Trello esta conformada por dos estudiantes cursantes de la carrera ingenieria en sistemas computacioneles, Franklin Rodriguez y Kenneth Reyes, siguenos en nuestro instagram para saber sobre los demas proyectos</p>
+    
+  </div>
+  <footer>
+    <a href="https://www.instagram.com/franklinrtinoco/">
+      <i className="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.instagram.com/29danireyes/">
+      <i className="fab fa-instagram"></i>
+    </a>
+  </footer>
+
+
+            
           </div>
         </div>
       </div>
@@ -81,3 +92,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

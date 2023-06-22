@@ -26,6 +26,7 @@ function postRegister(email, password) {
   return axios.request(options)
   .then(function (response) {
     console.log(response.data);
+    return response.data
   }).catch(function (error) {
     throw error;
   });
