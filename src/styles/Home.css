@@ -22,16 +22,13 @@ body{
 }
 .button-container {
     margin-top:50px;
+    
   }
-  
-
- 
-  
-  
-  .register-button {
+  .login-button {
     display: inline-block;
+    
     padding: 20px 40px;
-    margin-bottom: 10;
+    margin-bottom: 10px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -39,18 +36,42 @@ body{
     text-transform: uppercase;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    background-color: #0e36b6;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.login-button:hover {
+  background-color: #0c2d97;
+  color: #fff;
+}
+  
+
+ 
+  
+  
+  .register-button {
+    display: inline-block;
+    padding: 20px 60px;
+    margin-bottom: 10;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF3562;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
   }
 
   
-  .register-button {
-    background-color: #FF3562;
+  .register-button:hover  {
+    background-color: #9c1f3a;
     color: #fff;
   }
   
-  .login-button:hover,
-  .register-button:hover {
-    background-color: #243c85;
-  }
+  
   
 
 .menu i {
@@ -270,12 +291,12 @@ body {
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-    width: 700px;
+    width: 800px;
   }
   
   h1 span {
     
-    margin-left: -350px;
+    margin-left: -450px;
   }
   
   .message {

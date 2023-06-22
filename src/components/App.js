@@ -11,7 +11,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginContainer/>} Redirect to="/InicioSesion"/>
+        <Route path="/" element={<HomeContainer/>} Redirect to="/Home"/>
         <Route path="/InicioSesion" element={<LoginContainer/>}/>
         <Route path="/Proyecto" element={<ProjectContainer/>}/>
         <Route path="/Tablero" element={<BoardContainer/>}/>

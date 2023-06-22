@@ -50,12 +50,11 @@ const HomePage = () => {
       <span style={{ '--i': 10 }}>E</span>
     </div>
     <p>Organiza, colabora y sigue el progreso de tus proyectos de manera fácil y eficiente.</p>
-  
     <div className="button-container">
+      <a href="/Registro" className="register-button">Sign Up</a>
+    <a href="/InicioSesion" className="login-button">Login</a>
     
-    <a href="/Registro" className="register-button">Sign Up</a>
-
-
+   
     </div>
   </div>
 </div>
